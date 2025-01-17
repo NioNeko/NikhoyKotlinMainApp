@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">NikhoyApp</string>
+    <string name="title">My Application</string>
+    <string name="username">Nikholas Simanjuntak</string>
+    <string name="exit">Keluar</string>
+    <string name="bio">Pelajar di kelas XII RPL 1. Berikut link tentang saya dan link kontak media sosial saya</string>
+    <string name="section1">Target Project untuk semester ini</string>
+    <string name="item1">Project satu : Pembuatan Desain Multi Window dan passing data antar activity</string>
+    <string name="item2">Project dua : Pembuatan Desain dan Pengkodean Alur Program dalam sebuah Aplikasi Mobile</string>
+    <string name="item3">Project tiga : Pembuatan aplikasi dengan menerapkan teknik pengolahan input user</string>
+    <string name="item4">Project empat : Pembuatan aplikasi mobile dengan teknik desain aplikasi lanjutan</string>
+    <string name="item5">Project empat : Pembuatan aplikasi mobile dengan menerapkan basis data SQL lite</string>
+    <string name="copyright">Pemgrograman Perangkat Bergerak - Semester Ganjil - SMKN 24 Jakarta@2025</string>
+    <string name="beforefooter">Extra Feature like dial phone can be acces by pressing "Hubungi Saya". Can be found in the footer section. </string>
+
+<!--    -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <string name="fitur1">Tugas Kotlin</string>
+    <string name="fitur2">Jl Raya Sukarjingga</string>
+    <string name="fitur3">Kec. Lorem Ipsum</string>
+    <string name="fitur4">Jawa tenggara</string>
+
+    <string name="fitur5">Tentang Saya</string>
+    <string name="fitur6">Hubungi Saya</string>
+    <string name="fitur7">Fitur lain 3</string>
+    <string name="fitur8">Fitur lain 4</string>
+
+    <string name="fitur9">Another</string>
+    <string name="fitur10">Useless</string>
+    <string name="fitur11">Text</string>
+    <string name="fitur12">View</string>
+
+
+
+</resources>
