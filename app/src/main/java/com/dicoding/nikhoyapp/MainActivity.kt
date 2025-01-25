@@ -7,13 +7,12 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.ButtonBarLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -28,6 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         extbtn = findViewById(R.id.exitbtn)
         extbtn.setOnClickListener(this)
+
 
         tlp = findViewById(R.id.tlp)
         tlp.setOnClickListener(this)
@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tlp -> TlpMe()
         }
     }
+
     private fun showAboutPopup() {
         AlertDialog.Builder(this)
             .setTitle("About")
@@ -70,5 +71,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
         startActivity(dialPhoneIntent)
 
+    }
+
+    fun calculatorapp(view: View) {
+        val intent = Intent(this, Calculator::class.java)
+        Toast.makeText(this, "Login Success!", Toast.LENGTH_SHORT).show()
+
+        startActivity(intent)
     }
 }
