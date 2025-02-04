@@ -32,7 +32,7 @@
     <string name="username_field">Username</string>
     <string name="password_field">Password</string>
 
-<!--    calculator thing-->
+    <!--    calculator thing-->
     <string name="calc1">1</string>
     <string name="calc2">2</string>
     <string name="calc3">3</string>
@@ -50,13 +50,8 @@
     <string name="calcsymbol4">/</string>
     <string name="calcsymbol5">=</string>
     <string name="calcsymbol6">C</string>
-
-
-
-
-
-
-
+    <string name="confirm_password_field">Confirm Password</string>
+    <string name="register">Register</string>
 
 
 </resources>

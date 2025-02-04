@@ -4,39 +4,49 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 
 class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        var nama = findViewById<EditText>(R.id.usernameInput)
-        var pass = findViewById<EditText>(R.id.passwordInput)
-        val buttonClick = findViewById<Button>(R.id.login)
 
+        var dbHelper = Database(this)
 
-        buttonClick.setOnClickListener {
-            if (nama.text.toString()=="user" && pass.text.toString()=="123") {
-                val intent = Intent(this, MainActivity::class.java)
-                Toast.makeText(this, "Login Success!", Toast.LENGTH_SHORT).show()
+        // Find views dari layout
+        val usernameEditText = findViewById<TextInputEditText>(R.id.usernameInputi)
+        val passwordEditText = findViewById<TextInputEditText>(R.id.passwordInputi)
+        val loginButton = findViewById<Button>(R.id.logini)
 
-                startActivity(intent)
+        loginButton.setOnClickListener {
+            val username = usernameEditText.text?.toString()?.trim() ?: ""
+            val password = passwordEditText.text?.toString()?.trim() ?: ""
+
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (dbHelper.readUser(username, password)) {
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             } else {
-                Toast.makeText(this, "Login Failed!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Invalid Username or Password", Toast.LENGTH_SHORT).show()
             }
         }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        // Menggunakan signup_link dari layout bukan signup_button
+//        register.setOnClickListener {
+//            startActivity(Intent(this, RegisterActivity::class.java))
+//        }
     }
 }
